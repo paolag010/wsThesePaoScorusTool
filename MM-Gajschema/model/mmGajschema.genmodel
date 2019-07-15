@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/MM-Gajschema/src" modelPluginID="MM-Gajschema"
+    modelName="MmGajschema" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>mmGajschema.ecore</foreignModel>
+  <genPackages prefix="MmGajschema" disposableProviderFactory="true" ecorePackage="mmGajschema.ecore#/">
+    <genClasses ecoreClass="mmGajschema.ecore#//Schema">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmGajschema.ecore#//Schema/contient"/>
+    </genClasses>
+    <genClasses ecoreClass="mmGajschema.ecore#//Collection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmGajschema.ecore#//Collection/nameCol"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmGajschema.ecore#//Collection/definitPar"/>
+    </genClasses>
+    <genClasses ecoreClass="mmGajschema.ecore#//Document">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmGajschema.ecore#//Document/symbol1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmGajschema.ecore#//Document/symbol2"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmGajschema.ecore#//Document/contient"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmGajschema.ecore#//Document/id"/>
+    </genClasses>
+    <genClasses ecoreClass="mmGajschema.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmGajschema.ecore#//Attribute/nameAtt"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmGajschema.ecore#//Attribute/definitPar"/>
+    </genClasses>
+    <genClasses ecoreClass="mmGajschema.ecore#//AttributeID">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmGajschema.ecore#//AttributeID/nameID"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmGajschema.ecore#//AttributeID/x"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmGajschema.ecore#//Attribute/definitPar"/>
+    </genClasses>
+    <genClasses ecoreClass="mmGajschema.ecore#//AttType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmGajschema.ecore#//AttType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="mmGajschema.ecore#//Complexe"/>
+    <genClasses ecoreClass="mmGajschema.ecore#//Atomic"/>
+    <genClasses ecoreClass="mmGajschema.ecore#//Classique"/>
+    <genClasses ecoreClass="mmGajschema.ecore#//IntegerRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmGajschema.ecore#//IntegerRef/refere"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mmGajschema.ecore#//IntegerRef/existe"/>
+    </genClasses>
+    <genClasses ecoreClass="mmGajschema.ecore#//Array">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmGajschema.ecore#//Array/imbriqueDocs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmGajschema.ecore#//Array/contient"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmGajschema.ecore#//Array/symbol1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmGajschema.ecore#//Array/symbol2"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

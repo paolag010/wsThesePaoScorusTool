@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mmGajschema" nsURI="http://www.example.org/mmGajschema" nsPrefix="mmGajschema">
+  <eClassifiers xsi:type="ecore:EClass" name="Schema">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contient" lowerBound="1"
+        upperBound="-1" eType="#//Collection"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Collection">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameCol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definitPar" lowerBound="1"
+        eType="#//Document"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Document" eSuperTypes="#//Complexe">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="{"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="}"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contient" lowerBound="1"
+        upperBound="-1" eType="#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="id" lowerBound="1" eType="#//AttributeID"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameAtt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definitPar" lowerBound="1"
+        upperBound="-1" eType="#//AttType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeID">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="_id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="x" lowerBound="1" eType="#//Classique"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttType" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Complexe" abstract="true" eSuperTypes="#//AttType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Atomic" abstract="true" eSuperTypes="#//AttType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Classique" eSuperTypes="#//Atomic"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntegerRef" eSuperTypes="#//Atomic">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refere" lowerBound="1"
+        eType="#//AttributeID"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="existe" lowerBound="1"
+        eType="#//Collection" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Array" eSuperTypes="#//Complexe">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imbriqueDocs" lowerBound="1"
+        upperBound="-1" eType="#//Document"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contient" lowerBound="1"
+        upperBound="-1" eType="#//Atomic"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="["/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="]"/>
+  </eClassifiers>
+</ecore:EPackage>

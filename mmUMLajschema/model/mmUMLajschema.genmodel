@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/mmUMLajschema/src" modelPluginID="mmUMLajschema"
+    modelName="MmUMLajschema" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>mmUMLajschema.ecore</foreignModel>
+  <genPackages prefix="MmUMLajschema" disposableProviderFactory="true" ecorePackage="mmUMLajschema.ecore#/">
+    <genClasses ecoreClass="mmUMLajschema.ecore#//Schema">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmUMLajschema.ecore#//Schema/conformed"/>
+    </genClasses>
+    <genClasses ecoreClass="mmUMLajschema.ecore#//collectionClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmUMLajschema.ecore#//collectionClass/collectionName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmUMLajschema.ecore#//collectionClass/compound"/>
+    </genClasses>
+    <genClasses ecoreClass="mmUMLajschema.ecore#//TypeClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmUMLajschema.ecore#//TypeClass/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmUMLajschema.ecore#//TypeClass/canHave"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmUMLajschema.ecore#//TypeClass/contains"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmUMLajschema.ecore#//TypeClass/include"/>
+    </genClasses>
+    <genClasses ecoreClass="mmUMLajschema.ecore#//ExtensionAtt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmUMLajschema.ecore#//ExtensionAtt/level"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmUMLajschema.ecore#//ExtensionAtt/x"/>
+    </genClasses>
+    <genClasses ecoreClass="mmUMLajschema.ecore#//AttributeClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmUMLajschema.ecore#//AttributeClass/name"/>
+    </genClasses>
+    <genClasses ecoreClass="mmUMLajschema.ecore#//AttributeID">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmUMLajschema.ecore#//AttributeID/name"/>
+    </genClasses>
+    <genClasses ecoreClass="mmUMLajschema.ecore#//Relationship">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmUMLajschema.ecore#//Relationship/relationName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmUMLajschema.ecore#//Relationship/rolTargetName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmUMLajschema.ecore#//Relationship/x"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmUMLajschema.ecore#//Materialization/cardTarget"/>
+    </genClasses>
+    <genClasses ecoreClass="mmUMLajschema.ecore#//Cardinality"/>
+    <genClasses ecoreClass="mmUMLajschema.ecore#//Many">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmUMLajschema.ecore#//Many/Symbol"/>
+    </genClasses>
+    <genClasses ecoreClass="mmUMLajschema.ecore#//Simple"/>
+    <genClasses ecoreClass="mmUMLajschema.ecore#//Materialization">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmUMLajschema.ecore#//Materialization/cardTarget"/>
+    </genClasses>
+    <genClasses ecoreClass="mmUMLajschema.ecore#//Embedding">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmUMLajschema.ecore#//Embedding/embeds"/>
+    </genClasses>
+    <genClasses ecoreClass="mmUMLajschema.ecore#//Referencing">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmUMLajschema.ecore#//Referencing/refers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mmUMLajschema.ecore#//Referencing/guarantees"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

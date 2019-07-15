@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mmUMLajschema" nsURI="http://www.example.org/mmUMLajschema"
+    nsPrefix="mmUMLajschema">
+  <eClassifiers xsi:type="ecore:EClass" name="Schema">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conformed" lowerBound="1"
+        upperBound="-1" eType="#//collectionClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="collectionClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="collectionName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="&lt;ClassName>"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compound" lowerBound="1"
+        eType="#//TypeClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="t&lt;ClassName>"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="canHave" eType="#//ExtensionAtt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contains" upperBound="-1"
+        eType="#//AttributeClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="include" lowerBound="1"
+        eType="#//AttributeID"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtensionAtt">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="x" lowerBound="1" upperBound="-1"
+        eType="#//Relationship"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeID">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="_id"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relationship">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relationName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rolTargetName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="x" lowerBound="1" eType="#//Materialization"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cardinality"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Many" eSuperTypes="#//Cardinality">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="[ ]"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Simple" eSuperTypes="#//Cardinality"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Materialization" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cardTarget" lowerBound="1"
+        eType="#//Cardinality"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Embedding" eSuperTypes="#//Materialization">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="embeds" lowerBound="1"
+        eType="#//TypeClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Referencing" eSuperTypes="#//Materialization">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refers" lowerBound="1"
+        eType="#//AttributeID"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guarantees" lowerBound="1"
+        eType="#//collectionClass"/>
+  </eClassifiers>
+</ecore:EPackage>
